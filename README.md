@@ -39,7 +39,7 @@ pip3 install Pillow  to import PIL
 modify import cPickle to import pickle  
 modify import roi_pooling_op to import roi_pooling_layer.roi_pooling_op  
 modify from generate_anchors import generate_anchors to from rpn_msr.generate_anchors import generate_anchors  
-
+modify basestring to str
 ### Demo
 
 *After successfully completing [basic installation](#installation-sufficient-for-the-demo)*, you'll be ready to run the demo.
