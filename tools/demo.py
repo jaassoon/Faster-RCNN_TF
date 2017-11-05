@@ -118,7 +118,7 @@ if __name__ == '__main__':
    
     #sess.run(tf.initialize_all_variables())
 
-    print '\n\nLoaded network {:s}'.format(args.model)
+    print('\n\nLoaded network {:s}'.format(args.model))
 
     # Warmup on a dummy image
     im = 128 * np.ones((300, 300, 3), dtype=np.uint8)
@@ -130,8 +130,8 @@ if __name__ == '__main__':
 
 
     for im_name in im_names:
-        print '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
-        print 'Demo for data/demo/{}'.format(im_name)
+        print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
+        print('Demo for data/demo/{}'.format(im_name))
         demo(sess, net, im_name)
 
     plt.show()

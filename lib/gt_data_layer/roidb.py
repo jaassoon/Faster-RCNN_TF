@@ -30,7 +30,7 @@ def prepare_roidb(imdb):
     if os.path.exists(cache_file):
         with open(cache_file, 'rb') as fid:
             imdb._roidb = cPickle.load(fid)
-        print '{} gt roidb prepared loaded from {}'.format(imdb.name, cache_file)
+        print('{} gt roidb prepared loaded from {}'.format(imdb.name, cache_file))
         return
 
     roidb = imdb.roidb
@@ -89,7 +89,7 @@ def prepare_roidb(imdb):
 
     with open(cache_file, 'wb') as fid:
         cPickle.dump(roidb, fid, cPickle.HIGHEST_PROTOCOL)
-    print 'wrote gt roidb prepared to {}'.format(cache_file)
+    print('wrote gt roidb prepared to {}'.format(cache_file))
 
 def add_bbox_regression_targets(roidb):
     """Add information needed to train bounding-box regressors."""

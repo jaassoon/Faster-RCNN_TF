@@ -23,9 +23,9 @@ For details about R-CNN please refer to the paper [Faster R-CNN: Towards Real-Ti
   ```
 2. Modification for using python3.5  
 2.1 make.sh  
-  TF_INC=$(python3.5 -c 'import tensorflow as tf; print(tf.sysconfig.get_include())')  
+    TF_INC=$(python3.5 -c 'import tensorflow as tf; print(tf.sysconfig.get_include())')  
 2.2 Makefile  
-  python3.5 setup.py build_ext --inplace  
+    python3.5 setup.py build_ext --inplace  
 2.3 pip3 install Cython  
 3. Build the Cython modules
     ```Shell
@@ -36,13 +36,17 @@ For details about R-CNN please refer to the paper [Faster R-CNN: Towards Real-Ti
 ### Demo
 
 *After successfully completing [basic installation](#installation-sufficient-for-the-demo)*, you'll be ready to run the demo.
+Before run the demo,you may install some modules such as:
+pip3 install Pillow  to import PIL  
+modify import cPickle to import pickle
+
 
 Download model training on PASCAL VOC 2007  [[Google Drive]](https://drive.google.com/open?id=0ByuDEGFYmWsbZ0EzeUlHcGFIVWM) [[Dropbox]](https://www.dropbox.com/s/cfz3blmtmwj6bdh/VGGnet_fast_rcnn_iter_70000.ckpt?dl=0)
 
 To run the demo
 ```Shell
 cd $FRCN_ROOT
-python ./tools/demo.py --model model_path
+python3.5 ./tools/demo.py --model model_path
 ```
 The demo performs detection using a VGG16 network trained for detection on PASCAL VOC 2007.
 
