@@ -8,7 +8,7 @@ For details about R-CNN please refer to the paper [Faster R-CNN: Towards Real-Ti
 
 1. Requirements for Tensorflow (see: [Tensorflow](https://www.tensorflow.org/))
 
-2. Python packages you might not have: `cython`, `python-opencv`, `easydict`
+2. Python packages you might not have: `cython`, `python-opencv`, `easydict`  
 
 ### Requirements: hardware
 
@@ -19,10 +19,15 @@ For details about R-CNN please refer to the paper [Faster R-CNN: Towards Real-Ti
 1. Clone the Faster R-CNN repository
   ```Shell
   # Make sure to clone with --recursive
-  git clone --recursive https://github.com/smallcorgi/Faster-RCNN_TF.git
+  git clone --recursive https://github.com/smallcorgi/Faster-RCNN_TF.git  
   ```
-
-2. Build the Cython modules
+2. Modification for using python3.5  
+2.1 make.sh  
+  TF_INC=$(python3.5 -c 'import tensorflow as tf; print(tf.sysconfig.get_include())')  
+2.2 Makefile  
+  python3.5 setup.py build_ext --inplace  
+2.3 pip3 install Cython  
+3. Build the Cython modules
     ```Shell
     cd $FRCN_ROOT/lib
     make
