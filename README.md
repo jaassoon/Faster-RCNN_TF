@@ -37,6 +37,7 @@ For details about R-CNN please refer to the paper [Faster R-CNN: Towards Real-Ti
 you may install some modules such as:  
 pip3 install Pillow  to import PIL  
 modify import cPickle to import pickle  
+modify import roi_pooling_op to import roi_pooling_layer.roi_pooling_op  
 
 ### Demo
 
