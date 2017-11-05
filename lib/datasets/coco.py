@@ -33,7 +33,7 @@ def _filter_crowd_proposals(roidb, crowd_thresh):
         non_gt_inds = np.where(entry['gt_classes'] == 0)[0]
         if len(crowd_inds) == 0 or len(non_gt_inds) == 0:
             continue
-        iscrowd = [int(True) for _ in xrange(len(crowd_inds))]
+        iscrowd = [int(True) for _ in range(len(crowd_inds))]
         crowd_boxes = ds_utils.xyxy_to_xywh(entry['boxes'][crowd_inds, :])
         non_gt_boxes = ds_utils.xyxy_to_xywh(entry['boxes'][non_gt_inds, :])
         ious = COCOmask.iou(non_gt_boxes, crowd_boxes, iscrowd)
@@ -59,7 +59,7 @@ class coco(imdb):
         self._COCO = COCO(self._get_ann_file())
         cats = self._COCO.loadCats(self._COCO.getCatIds())
         self._classes = tuple(['__background__'] + [c['name'] for c in cats])
-        self._class_to_ind = dict(zip(self.classes, xrange(self.num_classes)))
+        self._class_to_ind = dict(zip(self.classes, range(self.num_classes)))
         self._class_to_coco_cat_id = dict(zip([c['name'] for c in cats],
                                               self._COCO.getCatIds()))
         self._image_index = self._load_image_set_index()
@@ -348,7 +348,7 @@ class coco(imdb):
               [{'image_id' : index,
                 'category_id' : cat_id,
                 'bbox' : [xs[k], ys[k], ws[k], hs[k]],
-                'score' : scores[k]} for k in xrange(dets.shape[0])])
+                'score' : scores[k]} for k in range(dets.shape[0])])
         return results
 
     def _write_coco_results_file(self, all_boxes, res_file):

@@ -23,7 +23,7 @@ class nthu(datasets.imdb):
                             else nthu_path
         self._data_path = os.path.join(self._nthu_path, 'data')
         self._classes = ('__background__', 'Car', 'Pedestrian', 'Cyclist')
-        self._class_to_ind = dict(zip(self.classes, xrange(self.num_classes)))
+        self._class_to_ind = dict(zip(self.classes, range(self.num_classes)))
         self._image_ext = '.jpg'
         self._image_index = self._load_image_set_index()
         # Default to roidb handler
@@ -186,7 +186,7 @@ class nthu(datasets.imdb):
                     dets = all_boxes[cls_ind][im_ind]
                     if dets == []:
                         continue
-                    for k in xrange(dets.shape[0]):
+                    for k in range(dets.shape[0]):
                         subcls = int(dets[k, 5])
                         cls_name = self.classes[self.subclass_mapping[subcls]]
                         assert (cls_name == cls), 'subclass not in class'
@@ -209,7 +209,7 @@ class nthu(datasets.imdb):
                     dets = all_boxes[cls_ind][im_ind]
                     if dets == []:
                         continue
-                    for k in xrange(dets.shape[0]):
+                    for k in range(dets.shape[0]):
                         subcls = int(dets[k, 5])
                         cls_name = self.classes[self.subclass_mapping[subcls]]
                         assert (cls_name == cls), 'subclass not in class'
@@ -229,7 +229,7 @@ class nthu(datasets.imdb):
                     dets = all_boxes[cls_ind][im_ind]
                     if dets == []:
                         continue
-                    for k in xrange(dets.shape[0]):
+                    for k in range(dets.shape[0]):
                         f.write('{:f} {:f} {:f} {:f} {:.32f}\n'.format(\
                                  dets[k, 0], dets[k, 1], dets[k, 2], dets[k, 3], dets[k, 4]))
 
@@ -242,7 +242,7 @@ class nthu(datasets.imdb):
                 dets = all_boxes[im_ind]
                 if dets == []:
                     continue
-                for k in xrange(dets.shape[0]):
+                for k in range(dets.shape[0]):
                     f.write('{:f} {:f} {:f} {:f} {:.32f}\n'.format(dets[k, 0], dets[k, 1], dets[k, 2], dets[k, 3], dets[k, 4]))
 
 
