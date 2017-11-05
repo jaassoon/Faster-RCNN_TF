@@ -10,7 +10,7 @@ import scipy.sparse
 from utils.cython_bbox import bbox_overlaps
 from utils.boxes_grid import get_boxes_grid
 import subprocess
-import cPickle
+import pickle
 from fast_rcnn.config import cfg
 import math
 from rpn_msr.generate_anchors import generate_anchors

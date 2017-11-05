@@ -15,7 +15,7 @@ import numpy as np
 import scipy.sparse
 import scipy.io as sio
 import utils.cython_bbox
-import cPickle
+import pickle
 import subprocess
 from utils.cython_bbox import bbox_overlaps
 from utils.boxes_grid import get_boxes_grid

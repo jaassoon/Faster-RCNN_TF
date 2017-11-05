@@ -33,13 +33,14 @@ For details about R-CNN please refer to the paper [Faster R-CNN: Towards Real-Ti
     make
     ```
 
+### Before run the demo
+you may install some modules such as:  
+pip3 install Pillow  to import PIL  
+modify import cPickle to import pickle  
+
 ### Demo
 
 *After successfully completing [basic installation](#installation-sufficient-for-the-demo)*, you'll be ready to run the demo.
-Before run the demo,you may install some modules such as:
-pip3 install Pillow  to import PIL  
-modify import cPickle to import pickle
-
 
 Download model training on PASCAL VOC 2007  [[Google Drive]](https://drive.google.com/open?id=0ByuDEGFYmWsbZ0EzeUlHcGFIVWM) [[Dropbox]](https://www.dropbox.com/s/cfz3blmtmwj6bdh/VGGnet_fast_rcnn_iter_70000.ckpt?dl=0)
 

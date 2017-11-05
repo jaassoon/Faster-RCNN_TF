@@ -13,7 +13,7 @@ import numpy as np
 import scipy.sparse
 import scipy.io as sio
 import utils.cython_bbox
-import cPickle
+import pickle
 import subprocess
 import uuid
 from voc_eval import voc_eval
