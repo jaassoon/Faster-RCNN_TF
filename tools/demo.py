@@ -64,8 +64,8 @@ def demo(sess, net, image_name):
     timer.tic()
     scores, boxes = im_detect(sess, net, im)
     timer.toc()
-    print ('Detection took {:.3f}s for '
-           '{:d} object proposals').format(timer.total_time, boxes.shape[0])
+    print(('Detection took {:.3f}s for '
+           '{:d} object proposals').format(timer.total_time, boxes.shape[0]))
 
     # Visualize detections for each class
     im = im[:, :, (2, 1, 0)]
@@ -122,7 +122,7 @@ if __name__ == '__main__':
 
     # Warmup on a dummy image
     im = 128 * np.ones((300, 300, 3), dtype=np.uint8)
-    for i in xrange(2):
+    for i in range(2):
         _, _= im_detect(sess, net, im)
 
     im_names = ['000456.jpg', '000542.jpg', '001150.jpg',

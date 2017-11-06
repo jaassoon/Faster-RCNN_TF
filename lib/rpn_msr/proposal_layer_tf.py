@@ -45,6 +45,7 @@ def proposal_layer(rpn_cls_prob_reshape,rpn_bbox_pred,im_info,cfg_key,_feat_stri
         'Only single item batches are supported'
     # cfg_key = str(self.phase) # either 'TRAIN' or 'TEST'
     #cfg_key = 'TEST'
+    cfg_key = cfg_key.decode("utf-8") #convert byte to string
     pre_nms_topN  = cfg[cfg_key].RPN_PRE_NMS_TOP_N
     post_nms_topN = cfg[cfg_key].RPN_POST_NMS_TOP_N
     nms_thresh    = cfg[cfg_key].RPN_NMS_THRESH

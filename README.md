@@ -42,6 +42,9 @@ modify from generate_anchors import generate_anchors to from rpn_msr.generate_an
 modify basestring to str  
 modify c_i to int(c_i)  
 modify xrange to range  
+pip3 install PyYAML  to import yaml  
+pip3 install easydict  to import easydict  
+cfg_key = cfg_key.decode("utf-8") in file /lib/rpn_msr/proposal_layer_tf.py #convert byte to string  
 ### Demo
 
 *After successfully completing [basic installation](#installation-sufficient-for-the-demo)*, you'll be ready to run the demo.
