@@ -45,14 +45,14 @@ for top_k in np.arange(1000, 11000, 1000):
 for year in ['2007']:
     for split in ['train', 'val', 'trainval', 'test']:
         name = 'voc_{}_{}'.format(year, split)
-        print name
+        print(name)
         __sets[name] = (lambda split=split, year=year:
                 datasets.pascal_voc(split, year))
 
 # KITTI dataset
 for split in ['train', 'val', 'trainval', 'test']:
     name = 'kitti_{}'.format(split)
-    print name
+    print(name)
     __sets[name] = (lambda split=split:
             datasets.kitti(split))
 
@@ -71,7 +71,7 @@ for year in ['2015']:
 # NTHU dataset
 for split in ['71', '370']:
     name = 'nthu_{}'.format(split)
-    print name
+    print(name)
     __sets[name] = (lambda split=split:
             datasets.nthu(split))
 

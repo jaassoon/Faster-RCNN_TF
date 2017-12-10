@@ -118,18 +118,18 @@ class nissan(datasets.imdb):
         if os.path.exists(cache_file):
             with open(cache_file, 'rb') as fid:
                 roidb = cPickle.load(fid)
-            print '{} roidb loaded from {}'.format(self.name, cache_file)
+            print('{} roidb loaded from {}'.format(self.name, cache_file))
             return roidb
 
-        print 'Loading region proposal network boxes...'
+        print('Loading region proposal network boxes...')
         model = cfg.REGION_PROPOSAL
         roidb = self._load_rpn_roidb(None, model)
-        print 'Region proposal network boxes loaded'
-        print '{} region proposals per image'.format(self._num_boxes_proposal / len(self.image_index))
+        print('Region proposal network boxes loaded')
+        print('{} region proposals per image'.format(self._num_boxes_proposal / len(self.image_index)))
 
         with open(cache_file, 'wb') as fid:
             cPickle.dump(roidb, fid, cPickle.HIGHEST_PROTOCOL)
-        print 'wrote roidb to {}'.format(cache_file)
+        print('wrote roidb to {}'.format(cache_file))
 
         return roidb
 
@@ -177,7 +177,7 @@ class nissan(datasets.imdb):
         # for each image
         for im_ind, index in enumerate(self.image_index):
             filename = os.path.join(output_dir, index + '.txt')
-            print 'Writing NISSAN results to file ' + filename
+            print('Writing NISSAN results to file ' + filename)
             with open(filename, 'wt') as f:
                 # for each class
                 for cls_ind, cls in enumerate(self.classes):
@@ -198,7 +198,7 @@ class nissan(datasets.imdb):
     def evaluate_detections_one_file(self, all_boxes, output_dir):
         # open results file
         filename = os.path.join(output_dir, 'detections.txt')
-        print 'Writing all NISSAN results to file ' + filename
+        print('Writing all NISSAN results to file ' + filename)
         with open(filename, 'wt') as f:
             # for each image
             for im_ind, index in enumerate(self.image_index):
@@ -220,7 +220,7 @@ class nissan(datasets.imdb):
         # for each image
         for im_ind, index in enumerate(self.image_index):
             filename = os.path.join(output_dir, index + '.txt')
-            print 'Writing NISSAN results to file ' + filename
+            print('Writing NISSAN results to file ' + filename)
             with open(filename, 'wt') as f:
                 # for each class
                 for cls_ind, cls in enumerate(self.classes):
@@ -237,7 +237,7 @@ class nissan(datasets.imdb):
         # for each image
         for im_ind, index in enumerate(self.image_index):
             filename = os.path.join(output_dir, index + '.txt')
-            print 'Writing NISSAN results to file ' + filename
+            print('Writing NISSAN results to file ' + filename)
             with open(filename, 'wt') as f:
                 dets = all_boxes[im_ind]
                 if dets == []:
